@@ -1,0 +1,17 @@
+<section
+  class="season-clock"
+  [title]="setIsDarkTitle()"
+  [class.dark]="isDark"
+  (click)="onToggleIsDark()"
+>
+  <article class="season-clock-title">
+    {{ clock | date : "MMMM" }} <span>({{ currSeason }})</span>
+  </article>
+  <img [src]="imgUrl" [alt]="currSeason" />
+  <article class="season-clock-day">
+    {{ clock | date : "EEEE" }}
+  </article>
+  <article class="season-clock-time">
+    {{ clock | date : "h:mm:ss a" }}
+  </article>
+</section>

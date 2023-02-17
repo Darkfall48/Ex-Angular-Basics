@@ -1,0 +1,27 @@
+.main-app {
+  padding: 20px;
+  background-color: #ffb3a3;
+  color: #1a1a1a;
+  width: 70%;
+  margin: 30px auto;
+  border-radius: 10px;
+
+  color: 292929;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  > h1:first-of-type {
+    text-shadow: 2px 3px 0px #898999;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  > section {
+    padding-block: 5px;
+  }
+
+  .admin {
+    outline: 5px dashed #7393ff;
+  }
+}

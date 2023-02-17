@@ -1,0 +1,23 @@
+.season-clock {
+  background-color: darkcyan;
+  color: white;
+  width: 480px;
+  height: fit-content;
+  text-align: center;
+  padding: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  &.dark {
+    background-color: #333;
+    color: white;
+  }
+  &-title {
+    font-size: 48px;
+  }
+  &-day {
+    font-size: 48px;
+  }
+  &-time {
+    font-size: 48px;
+  }
+}
