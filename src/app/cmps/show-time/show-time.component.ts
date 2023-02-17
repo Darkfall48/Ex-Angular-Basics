@@ -19,12 +19,13 @@ export class ShowTimeComponent implements OnInit {
     this.setSeasonImg();
     this.setTimer();
   }
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.clearTimer();
+  }
 
   setTimer() {
     this.intervalId = setInterval(() => {
       this.clock = new Date();
-      // console.log('Clock', this.clock);
     }, 1000);
   }
   clearTimer() {

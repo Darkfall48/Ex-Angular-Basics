@@ -1,0 +1,28 @@
+.mouse-monitor {
+  display: grid;
+  gap: 8px;
+  background-color: darkolivegreen;
+  color: white;
+  border-radius: 4px;
+  padding: 18px;
+  align-items: center;
+  width: 200px;
+  place-items: center;
+  &-title {
+  }
+  &-pos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 18px;
+    &-x {
+    }
+    &-y {
+    }
+  }
+  &-toggle-btn {
+    margin-top: 16px;
+    display: flex;
+    place-content: center;
+  }
+}

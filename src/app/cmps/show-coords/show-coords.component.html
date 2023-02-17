@@ -1,0 +1,14 @@
+<section class="mouse-monitor">
+  <h1 class="mouse-monitor-title">Mouse Position</h1>
+  <div class="mouse-monitor-pos">
+    <h2 class="mouse-monitor-pos-x">
+      X: <span>{{ pos.x }}</span>
+    </h2>
+    <h2 className="mouse-monitor-pos-y">
+      Y: <span>{{ pos.y }}</span>
+    </h2>
+  </div>
+  <button class="mouse-monitor-toggle-btn" (click)="handleToggle()">
+    {{ isOn ? "Pause" : "Resume" }}
+  </button>
+</section>
