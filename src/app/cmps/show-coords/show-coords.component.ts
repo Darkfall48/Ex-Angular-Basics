@@ -6,8 +6,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./show-coords.component.scss'],
 })
 export class ShowCoordsComponent {
-  constructor() {}
-
+  //? Private Variables
   isOn: boolean = true;
   pos = { x: 0, y: 0 };
 

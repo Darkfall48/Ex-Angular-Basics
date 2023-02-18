@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-time.component.scss'],
 })
 export class ShowTimeComponent implements OnInit {
-  constructor() {}
-
+  //? Private Variables
   clock: Date = new Date();
   currSeason: string = 'Seasons';
   isDark: boolean = true;
@@ -28,6 +27,7 @@ export class ShowTimeComponent implements OnInit {
       this.clock = new Date();
     }, 1000);
   }
+
   clearTimer() {
     clearInterval(this.intervalId);
   }
@@ -35,6 +35,7 @@ export class ShowTimeComponent implements OnInit {
   onToggleIsDark() {
     this.isDark = !this.isDark;
   }
+
   setIsDarkTitle() {
     return `Change to ${this.isDark ? 'light' : 'dark'}`;
   }
@@ -62,6 +63,7 @@ export class ShowTimeComponent implements OnInit {
         return (this.currSeason = 'Invalid Month');
     }
   }
+
   setSeasonImg() {
     return (this.imgUrl = `assets/imgs/seasons/${this.currSeason.toLowerCase()}.png`);
   }

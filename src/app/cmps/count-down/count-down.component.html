@@ -1,0 +1,27 @@
+<section class="count-down">
+  <timer
+    [counter]="counter"
+    [startedRedColor]="10"
+    (due)="done($event)"
+  ></timer>
+  <div class="count-down-btns">
+    <button
+      (click)="onStartTimer()"
+      class="count-down-btns-start-btn nice-button"
+    >
+      Start
+    </button>
+    <button
+      class="count-down-btns-pause-btn nice-button"
+      (click)="onClearInterval()"
+    >
+      Pause
+    </button>
+    <button
+      class="count-down-btns-reset-btn nice-button"
+      (click)="onResetTimer()"
+    >
+      Reset
+    </button>
+  </div>
+</section>
