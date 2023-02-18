@@ -1,7 +1,9 @@
 <section class="count-down">
   <timer
     [counter]="counter"
+    (changeCounter)="onCounterChange($event)"
     [startedRedColor]="10"
+    [isStarted]="isStarted"
     (due)="done($event)"
   ></timer>
   <div class="count-down-btns">
@@ -9,7 +11,7 @@
       (click)="onStartTimer()"
       class="count-down-btns-start-btn nice-button"
     >
-      Start
+      {{ isStarted ? "Continue" : "Start" }}
     </button>
     <button
       class="count-down-btns-pause-btn nice-button"

@@ -27,19 +27,27 @@ export class CountDownComponent implements OnInit {
   }
   onResetTimer() {
     if (this.intervalId) this.onClearInterval();
+    if (this.isStarted) this.isStarted = false;
     this.counter = this.startedCounter;
   }
   onStartTimer() {
     if (this.intervalId) return;
+    if (!this.isStarted) this.isStarted = true;
     this.intervalId = setInterval(() => this.onDecrease(), 1000);
   }
   onDecrease() {
     this.counter = this.counter - 1000;
   }
+  onCounterChange(newCounter: number) {
+    console.log('newCounterrrr :>> ', newCounter);
+    this.counter = newCounter;
+  }
+
   done(msg: string) {
     console.log(msg);
     this.audio.play();
     this.onClearInterval();
     this.counter = 0;
+    if (this.isStarted) this.isStarted = false;
   }
 }

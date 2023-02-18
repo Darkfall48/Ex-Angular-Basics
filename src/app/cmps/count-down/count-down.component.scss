@@ -3,7 +3,8 @@
   background-color: darkorange;
   border-radius: 4px;
   padding: 18px;
-  align-items: center;
+  place-items: center;
+  gap: 18px;
   &-btns {
     display: flex;
     justify-content: center;

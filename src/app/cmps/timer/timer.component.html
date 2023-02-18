@@ -1,3 +1,11 @@
-<article [class]="'count-down-timer ' + setTimerColor()">
+<!-- <article [class]="'count-down-timer ' + setTimerColor()">
   {{ counter | date : "mm:ss" }}
-</article>
+</article> -->
+
+<input
+  type="time"
+  [class]="'count-down-timer ' + setTimerColor()"
+  [ngModel]="counter | date : 'mm:ss'"
+  (ngModelChange)="onChangeCounter($event)"
+  [disabled]="isStarted"
+/>

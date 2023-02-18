@@ -2,7 +2,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -12,14 +11,12 @@ import {
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss'],
 })
-export class TimerComponent implements OnInit {
+export class TimerComponent {
   @Input() counter!: number;
   @Input() startedRedColor!: number;
+  @Input() isStarted!: boolean;
   @Output() due = new EventEmitter<string>();
-
-  ngOnInit(): void {
-    this.onDone();
-  }
+  @Output() changeCounter = new EventEmitter<number>();
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['counter']) {
@@ -31,8 +28,18 @@ export class TimerComponent implements OnInit {
     if (this.counter <= 0) this.due.emit('Eggs are ready! 🍳');
   }
 
+  onChangeCounter(ev: any) {
+    const [minutes, seconds] = ev.split(':');
+    const newCounter = (+minutes * 60 + +seconds) * 1000;
+    console.log('newCounter :>> ', newCounter);
+    if (!isNaN(newCounter)) {
+      this.counter = newCounter;
+      this.changeCounter.emit(newCounter);
+    }
+  }
+
   setTimerColor() {
-    if (this.counter <= this.startedRedColor) {
+    if (this.counter / 1000 <= this.startedRedColor) {
       return 'red blink';
     }
     return;
