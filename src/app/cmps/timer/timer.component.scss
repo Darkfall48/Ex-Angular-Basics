@@ -1,14 +1,17 @@
 .count-down-timer {
-  color: darkmagenta;
+  color: lightcyan;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 18px;
   &.red {
     color: rgb(216, 71, 71);
   }
   &.blink {
     animation: blinker 1s linear infinite;
   }
-  font-size: 32px;
-  text-align: center;
-  padding-bottom: 18px;
 }
 
 @keyframes blinker {

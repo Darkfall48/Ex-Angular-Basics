@@ -1,0 +1,44 @@
+.who-watch {
+  display: grid;
+  place-items: center;
+  background-color: darkcyan;
+  color: white;
+  width: 480px;
+  height: fit-content;
+  text-align: center;
+  padding: 18px;
+  border-radius: 8px;
+  &-watchers {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    place-content: center;
+    // grid-template-columns: repeat(fit-content, minmax(150px, 1fr));
+    gap: 18px;
+    &-watcher {
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      width: max-content;
+      padding: 18px;
+    }
+  }
+  &-watcher {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    gap: 18px;
+    &-back-btn {
+      width: fit-content;
+    }
+    &-show {
+      display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr);
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,4 +1,7 @@
 .main-app {
+  display: grid;
+  place-items: center;
+  gap: 18px;
   padding: 20px;
   background-color: #ffb3a3;
   color: #1a1a1a;

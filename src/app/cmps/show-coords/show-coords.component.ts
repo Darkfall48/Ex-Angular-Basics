@@ -19,8 +19,8 @@ export class ShowCoordsComponent {
 
   handleToggle() {
     this.isOn = !this.isOn;
-    if (!this.isOn) {
-      this.pos = { x: 0, y: 0 };
-    }
+    // if (!this.isOn) {
+    //   this.pos = { x: 0, y: 0 };
+    // }
   }
 }

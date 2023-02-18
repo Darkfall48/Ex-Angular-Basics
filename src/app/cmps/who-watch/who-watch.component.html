@@ -1,0 +1,32 @@
+<section class="who-watch">
+  <h1>Who's watch?</h1>
+  <section *ngIf="!isSelected" class="who-watch-watchers">
+    <article
+      class="who-watch-watchers-watcher"
+      [style]="'background-color:' + watcher.bgImage"
+      [title]="watcher.name"
+      (click)="isSelected = true; watcherSelected = watcher"
+      *ngFor="let watcher of watchers; trackBy: trackByFn"
+    >
+      {{ watcher.name }}
+    </article>
+  </section>
+  <section class="who-watch-watcher" *ngIf="isSelected">
+    <button class="who-watch-watcher-back-btn" (click)="isSelected = false">
+      Switch User
+    </button>
+    <article
+      class="who-watch-watcher-show"
+      *ngFor="
+        let show of watcherSelected.shows;
+        trackBy: trackByFn;
+        index as idx
+      "
+    >
+      <a [href]="show.showUrl" target="_blank" rel="noopener noreferrer">
+        <img [src]="show.imgUrl" [alt]="show.name" [title]="show.name" />
+      </a>
+      <h1>{{ show.name }}</h1>
+    </article>
+  </section>
+</section>
